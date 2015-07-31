@@ -1,12 +1,10 @@
 <h2><%= @post.name %> <a href="/posts/<%= @post.id %>/edit">(edit)</a></h2>
 <h4><%= @post.content %></h4>
 
-<h3>Posts <%= link_to "(+)", new_post_comment_path(@artist) %></h3>
+<h3>Comments <%= link_to "(+)", new_post_comment_path(@post) %></h3>
 <ul>
   <% @post.comments.each do |comment| %>
-    <li>
-      <%= link_to "#{song.title} (#{song.album})", post_comment_path(@post, comment) %>
-    </li>
-
+      <h2><%= @comment.name %></h2>
+      <p> <%= @comment.content %></p>
   <% end %>
 </ul>
