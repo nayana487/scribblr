@@ -4,7 +4,7 @@
 <h3>Comments <%= link_to "(+)", new_post_comment_path(@post) %></h3>
 <ul>
   <% @post.comments.each do |comment| %>
-      <h2><%= @comment.name %></h2>
-      <p> <%= @comment.content %></p>
+      <h2><%= comment.name %></h2>
+      <p> <%= comment.content %></p>
   <% end %>
 </ul>
