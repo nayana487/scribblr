@@ -17,6 +17,8 @@ class UsersController < ApplicationController
       message = "Your account couldn't be created. Did you enter a unique username and password?"
     end
     flash[:notice] = message
+
+    # AM: Might be better to redirect the user to the sign-in page or index after they sign up.
     redirect_to action: :sign_up
   end
 
@@ -38,6 +40,8 @@ class UsersController < ApplicationController
     session[:user] = @user
     end
     flash[:notice] = message
+    
+    # AM: Echoing what I said above, although this time would make sense to direct them to the index since they're logged in.
     redirect_to action: :sign_in
   end
 
